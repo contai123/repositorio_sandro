@@ -3,7 +3,7 @@ conn = mysql.connector.connect(
     host="localhost",  
     user="root",       
     password="",       
-    database="db_python"  
+    database="insta_python"  
 )
 
 cursor = conn.cursor()
@@ -19,14 +19,14 @@ numSeguindo= input("diga o numseguindo")
 
 
 
-cursor.execute("INSERT INTO perfis (id, idPerfil, nomePerfil, numSeguidores, numPosts, numSeguindo) "
+cursor.execute("INSERT INTO users (id, idPerfil, nome, numSeg, numPost, numSeguindo) "
     "VALUES (%s, %s, %s, %s, %s, %s)", 
     (id, idPerfil, nome, numSeg, numPost, numSeguindo))
 
 
 conn.commit()
 
-cursor.execute("SELECT * FROM perfis")
+cursor.execute("SELECT * FROM users")
 resultados = cursor.fetchall()
 for row in resultados:
     print(row)
