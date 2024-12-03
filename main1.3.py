@@ -43,13 +43,13 @@ def buscar_perfis_rapidapi(palavra_chave):
 def buscar_detalhes(lista_username):
     loader = instaloader.Instaloader()
     dados_usuarios = []
-# 
+
     # Autenticação do Instaloader (se necessário)
-    loader.context.log("Logging in...")
-    loader.load_session_from_file("seu_usuario")  # Se você já tiver sessão salva
-    if not loader.context.is_logged_in:
-        loader.context.log("Login failed! Realizando login...")
-        loader.login("seu usuário", "sua senha") # entre com seu usuário e sua senha
+    #loader.context.log("Logging in...")
+    #loader.load_session_from_file("seu_usuario")  # Se você já tiver sessão salva
+    #if not loader.context.is_logged_in:
+    #loader.context.log("Login failed! Realizando login...")
+    loader.login("bizu_java", "knn1056c")
     print('Você está logado')
 
     for username in lista_username:
