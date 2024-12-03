@@ -11,7 +11,7 @@ conn = mysql.connector.connect(
 cursor = conn.cursor()
 
 
-cursor.execute("SELECT * FROM users")
+cursor.execute("SELECT ID, Nickname, Seguidores, Seguindo, Postagens FROM users WHERE Postagens > 10 AND Seguidores > 200 ORDER BY Seguidores DESC, Postagens DESC  LIMIT 5")
 resultados = cursor.fetchall()
 for row in resultados:
     print(row)
